@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <style>
+         #append {
+            width: 50%;
+            height: 400px;
+           margin-left: 50px;
+            margin-top: 60px;
+        }
+
+        iframe:hover {
+            opacity: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="append"></div>
+</body>
+</html>
+<script>
+//-------------searched---------
+let data = JSON.parse(localStorage.getItem("videoes"))
+    console.log(data);
+
+    let cont = document.querySelector("#append")
+
+    // console.log(el.id,el.title);
+    let box = document.createElement("div")
+    let iframe = document.createElement("iframe")
+    iframe.src = `https://www.youtube.com/embed/${data.id.videoId}`
+    iframe.width = "100%"
+    iframe.height = "400px"
+    iframe.allow = "fullscreen"
+    let name1 = document.createElement("h3")
+
+    name1.innerText = data.title
+    box.append(iframe, name1)
+    cont.append(box)
+
+</script>

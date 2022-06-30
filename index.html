@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <script src="https://kit.fontawesome.com/4c322811d7.js" crossorigin="anonymous"></script>
+    <style>
+        #popular {
+            display: grid;
+            grid-template-columns: repeat(4, 24.4%);
+            gap: 1%;
+        }
+
+        #popular>div>img:hover {
+            opacity: 50%;
+        }
+
+        #nav {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            display: flex;
+            padding: 0px 25px;
+            height: 50px;
+            /* overflow:visible;
+            position: fixed; */
+            justify-content: space-between;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        #nav>div:nth-child(1) {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #nav>div:nth-child(2) {
+            display: flex;
+            padding: 0px 0px 6px 0px;
+            align-items: center;
+        }
+
+        #nav>div:nth-child(3) {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 600px;
+            height: 33px;
+            font-size: 15px;
+            padding-left: 5px;
+            outline: none;
+            border: 1px solid rgb(190, 190, 190);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #logo {
+            display: flex;
+        }
+
+        #logo>div {
+            display: flex;
+            align-items: center;
+        }
+
+        #one {
+            display: flex;
+            padding: 15px 25px;
+            justify-content: space-between;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin-bottom: 20px;
+        }
+
+        #one>div {
+            border-radius: 30px;
+            padding: 5px 10px;
+            border: 1px solid rgb(191, 191, 191);
+        }
+
+        #one>div:hover {
+            background-color: rgb(236, 236, 236);
+        }
+
+        #all {
+            color: white;
+            background-color: black;
+        }
+
+        button {
+            box-sizing: border-box;
+            width: 8%;
+            height: 33px;
+            border: 1px solid rgb(190, 190, 190);
+            border-left: none;
+            margin-right: 10px;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: rgb(222, 222, 222);
+        }
+
+        #searchvideo>div {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #searchvideo img {
+            width: 300px;
+        }
+        #searchvideo p{
+            font-size: 14px;
+        }
+        #show {
+            display: flex;
+        }
+
+        #show>div:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-right: 15px;
+        }
+
+        #show>div:nth-child(1)>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #img {
+            width: 32px;
+            border-radius: 50%;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div><a href="index.html"> <img src="https://www.toptrade.it/files/2022/04/YouTube-logo.png"></a>
+
+        </div>
+
+        <div>
+            <input type="text" id="query" placeholder="Search"><button onclick="searchvideo()"><i
+                    class="fa-solid fa-magnifying-glass"></i></button><i class="fa-solid fa-microphone"></i>
+        </div>
+
+        <div id="logo">
+            <div> <i class="fa-solid fa-video"></i></div>
+
+            <div>
+                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"
+                    class="style-scope yt-icon" style="pointer-events: none; display: block; width: 60%; height: 50%;">
+                    <g class="style-scope yt-icon">
+                        <path
+                            d="M16,4v4h4V4H16z M19,7h-2V5h2V7z M16,10v4h4v-4H16z M19,13h-2v-2h2V13z M10,4v4h4V4H10z M13,7h-2V5h2V7z M10,10v4h4v-4H10z M13,13h-2v-2h2V13z M16,16v4h4v-4H16z M19,19h-2v-2h2V19z M10,16v4h4v-4H10z M13,19h-2v-2h2V19z M4,4v4h4V4H4z M7,7H5V5h2V7z M4,10 v4h4v-4H4z M7,13H5v-2h2V13z M4,16v4h4v-4H4z M7,19H5v-2h2V19z"
+                            class="style-scope yt-icon"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div><i class="fa-solid fa-bell"></i></div>
+
+            <div><img id="img"
+                    src="https://yt3.ggpht.com/yti/APfAmoEngRBjk4v_EVZE60jP522oqPSQvqbMUrwiytKfyg=s88-c-k-c0x00ffffff-no-rj-mo">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="one">
+        <div id="all">All</div>
+        <div>Mixes</div>
+        <div>Music</div>
+        <div>JavaScript</div>
+        <div>Street Food</div>
+        <div>Comedies</div>
+        <div>Test Drives</div>
+        <div>Stews</div>
+        <div>Nana Patekar</div>
+        <div>Computers</div>
+        <div>Courses</div>
+        <div>Tamil Cinema</div>
+    </div>
+    <div id="show">
+        <div>
+            <div><i class="fa-solid fa-house"></i>Home</div>
+            <div><i class="fa-brands fa-pied-piper"></i>Explore</div>
+            <div><i class="fa-solid fa-circle-play"></i>Shorts</div>
+            <div><i class="fa-brands fa-youtube"></i>Subscriptions</div>
+            <div><i class="fa-solid fa-circle-play"></i>Library</div>
+        </div>
+        <div>
+            <div id="popular"></div>
+            <div id="searchvideo"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    //----------popular video start-------------
+
+    const url = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=100&regionCode=In&key=AIzaSyC9ef1A49j3BCGCVl26CHG_7uyL4mUR8a8"
+
+    fetch(url).then(function (res) {
+        return res.json()
+    }).then(function (res) {
+        console.log(res)
+        append(res.items)
+    }).catch(function (err) {
+        console.log(err)
+    })
+
+    const append = (videos) => {
+        var popular = document.querySelector("#popular")
+        videos.forEach(({ id, snippet: { title }, snippet: { thumbnails: { medium: { url } } } }) => {
+
+            let div = document.createElement("div")
+
+            let iframe = document.createElement("iframe")
+            iframe.src = `https://www.youtube.com/embed/${id}`
+            iframe.style.width = "100%"
+            iframe.style.height = "100%"
+            iframe.allow = "fullscreen"
+
+            let name = document.createElement("h4")
+            name.innerText = title
+
+            let img = document.createElement("img")
+            img.src = url
+
+            div.append(img, name)
+
+
+            let data = {
+                title,
+                id
+            }
+
+            div.onclick = () => {
+                showvideos(data)
+                console.log(data)
+            }
+
+            popular.append(div)
+        })
+
+    }
+
+    const showvideos = (x) => {
+        window.location.href = "video.html"
+        localStorage.setItem("video", JSON.stringify(x))
+    }
+
+    //----------popular video end-------------
+
+    //---------------search video start-----------
+
+    const searchvideo = async () => {
+        try {
+            document.querySelector("#popular").innerHTML = null
+            const q = document.getElementById("query").value
+
+            const res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${q}%202&key=AIzaSyC9ef1A49j3BCGCVl26CHG_7uyL4mUR8a8`)
+
+            const data = await res.json()
+            // console.log(data.items)
+            appendd(data.items)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const appendd = (videos) => {
+        let searchvideo = document.getElementById("searchvideo")
+        searchvideo.innerHTML = null
+
+        videos.forEach(({ id, snippet: { title }, snippet: { description }, snippet: { channelTitle }, snippet: { thumbnails: { medium: { url } } } }) => {
+            
+            let div = document.createElement("div")
+            let div1 = document.createElement("div")
+            let div2 = document.createElement("div")
+
+            let iframe = document.createElement("iframe")
+            iframe.src = `https://www.youtube.com/embed/${id}`
+            iframe.style.width = "100%"
+            iframe.style.height = "100%"
+            iframe.allow = "fullscreen"
+
+            let name = document.createElement("h3")
+            name.innerText = title
+            let description1 = document.createElement("p")
+            description1.innerText = description
+            let channelTitle1 = document.createElement("p")
+            channelTitle1.innerText = channelTitle
+
+            let img = document.createElement("img")
+            img.src = url
+
+            div1.append(img)
+            div2.append(name, channelTitle1,description1)
+
+
+            let data = {
+                title,
+                id
+            }
+
+            div.onclick = () => {
+                searchedvideo(data)
+            }
+
+            div.append(div1, div2)
+
+            searchvideo.append(div)
+
+        })
+    }
+
+    const searchedvideo = (x) => {
+        window.location.href = "svideo.html"
+        localStorage.setItem("videoes", JSON.stringify(x))
+    }
+
+    //---------------search video end-----------
+
+</script>
+
+<!-- most popular youtube api -->
+
+<!-- https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=100&regionCode=In&key=AIzaSyC9ef1A49j3BCGCVl26CHG_7uyL4mUR8a8  -->
